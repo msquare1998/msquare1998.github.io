@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>银河 海滩 我们 |  M Square</title>
+      <title>银河 海滩 我们 (Stary night) |  M Square</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -62,7 +62,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  银河 海滩 我们
+  银河 海滩 我们 (Stary night)
 </h1>
  
 
@@ -71,7 +71,7 @@
        
     <div class="article-entry" itemprop="articleBody">
        
-  <p><img src="/travel/pages/galaxy.jpeg"></p>
+  <p><img src="/travel/pages/galaxy.jpeg" alt="Oct, 2023 / Wenchang, Hainan, China"></p>
  
       <!-- reward -->
       
@@ -97,8 +97,8 @@
     <ul>
       <li>
         Copyrights &copy;
-        2023
-        <i class="ri-heart-fill heart_icon"></i> 贝贝&amp;点点
+        2023-2024
+        <i class=""></i> Min &amp; Ming
       </li>
     </ul>
     <ul>
@@ -147,15 +147,23 @@
   <ul class="nav nav-main">
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/">主页</a>
+      <a class="nav-item-link" href="/">Home</a>
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/travel">旅行</a>
+      <a class="nav-item-link" href="/logs">Notes</a>
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/logs">随笔</a>
+      <a class="nav-item-link" href="/publication">Publs</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/travel">Photos</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">About</a>
     </li>
     
   </ul>
@@ -181,6 +189,30 @@
 <!-- ImageViewer -->
 
 <!-- MathJax -->
+ <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js"></script>
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/config/TeX-AMS-MML_HTMLorMML-full.js"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true,
+  };
+</script>
 
 <!-- Katex -->
 
@@ -263,42 +295,6 @@
 
     
     
-<script>
-  const password = "strawberry";
-  const lock_password = window.sessionStorage.getItem("lock_password");
-  console.log(password, lock_password);
-  if (lock_password !== password) {
-    Swal.fire({
-      title: "Please enter password",
-      input: "text",
-      inputAttributes: {
-        autocapitalize: "off",
-      },
-      showCancelButton: false,
-      showLoaderOnConfirm: true,
-      allowOutsideClick: false,
-      confirmButtonText: "Ok",
-    }).then((result) => {
-      console.log(result);
-      if (result.isConfirmed) {
-        console.log(password);
-        if (result.value === password) {
-          window.sessionStorage.setItem("lock_password", result.value);
-        } else {
-          Swal.fire({
-            icon: "error",
-            title: "Incorrect password, please try again",
-            confirmButtonText: "Ok",
-            allowOutsideClick: false,
-          }).then(() => {
-            window.location.reload();
-          });
-        }
-      }
-    });
-  }
-</script>
-
 
   </div>
 </body>
