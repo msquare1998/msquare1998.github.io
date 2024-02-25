@@ -77,303 +77,48 @@
     <div class="article-entry" itemprop="articleBody">
        
   <blockquote>
+<p>Author: Ming</p>
+<p>Last update: Feb 25, 2024</p>
 <p>Refs: </p>
 <ul>
 <li>Nielsen&amp;Chuang. <em>Quantum computation and quantum information</em>.</li>
 <li>Benenti et al. <em>Pinciples of quantum computation and quantum information.</em></li>
 </ul>
 </blockquote>
-<h2 id="1-Concept-of-quantum-computer"><a href="#1-Concept-of-quantum-computer" class="headerlink" title="1. Concept of quantum computer"></a>1. Concept of quantum computer</h2><h3 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1-1 Motivation"></a>1-1 Motivation</h3><p>In <strong>Schrödinger picture</strong>, the evolution of a <strong>closed</strong> quantum system is described by<br>$$<br>|\psi’(t)\rangle &#x3D;  U(t)|\psi(0)\rangle<br>$$<br>where $U(t)\equiv U$ is some unitary operator, i.e. $UU^{\dagger}&#x3D;I$.</p>
-<blockquote>
-<ul>
-<li>Exactly simulating an arbitrary quantum system on classical computers need <u>exponentially large</u> resources!!!</li>
-</ul>
-<p><strong>Basic idea:</strong></p>
-<ul>
-<li>If we can make $U$ <strong>controllable</strong>, i.e. we can evolve $|\psi\rangle$ into any $|\psi’\rangle$ we want, then we are able to investigate another quantum system by <strong>“mimicing” its behavior</strong> with this <strong>controllable quantum system</strong>.</li>
-</ul>
-</blockquote>
-<p><strong>Now the problems become</strong></p>
-<blockquote>
+<h2 id="1-Concept-of-quantum-computer"><a href="#1-Concept-of-quantum-computer" class="headerlink" title="1. Concept of quantum computer"></a>1. Concept of quantum computer</h2><h3 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1-1 Motivation"></a>1-1 Motivation</h3><p>In the Schrödinger picture, the evolution of a <strong>closed</strong> quantum system is described by<br>$$<br>|\psi’(t)\rangle &#x3D;  U(t)|\psi(0)\rangle<br>$$<br>where $U(t)\equiv U$ is some unitary operator, i.e. $UU^{\dagger}&#x3D;I$.</p>
+<p>There is a fact that <em>exactly simulating an arbitrary quantum system on classical computers need exponentially large resources</em>! How to bypass&#x2F;overcome this problem? </p>
+<p>A genius idea is to make $U$ controllable. If we have a controllable quantum system, i.e. we can evolve $|\psi\rangle$ into any $|\psi’\rangle$ as we want, then we are able to investigate the target quantum system by mimicing and calculating its behaviors and properties.</p>
+<p>Now the problem becomes</p>
 <ol>
-<li>How to physically build this controllable quantum system (hardware level)?</li>
-<li>With what kinds of $U$ can we evolve $|\psi\rangle$ to $|\psi’\rangle$ (algorithm or software level)?</li>
+<li><p>How to physically build a controllable quantum system (hardware level)?</p>
+</li>
+<li><p>With what a specific $U$ can we evolve $|\psi\rangle$ to $|\psi’\rangle$ (algorithm or software level)?</p>
+</li>
 </ol>
-</blockquote>
-<ul>
-<li><p>We call such a controllable quantum system a <strong>quantum computer.</strong></p>
-</li>
-<li><p>Algorithms for designing $U$ for some problems on a quantum computer are called <strong>quantum algorithms</strong>.</p>
-</li>
-</ul>
-<h3 id="1-3-Why-do-we-name-it-after-a-“computer”"><a href="#1-3-Why-do-we-name-it-after-a-“computer”" class="headerlink" title="1-3 Why do we name it after a “computer”?"></a>1-3 Why do we name it after a “computer”?</h3><p>The essence of computation is<br>$$<br>\text{input: }x_0 \xrightarrow{f_0(x)} x_1<br>\xrightarrow{f_2(x)} \cdots \xrightarrow{f_{m -1 }(x)} \text{output: }x_{m}<br>$$</p>
+<p>Such a controllable quantum system is called a <strong>quantum computer.</strong></p>
+<p>Algorithms for finding&#x2F;designing $U$ for some problems on a quantum computer are called <strong>quantum algorithms</strong>. </p>
+<h3 id="1-3-Why-do-we-name-it-after-a-“computer”"><a href="#1-3-Why-do-we-name-it-after-a-“computer”" class="headerlink" title="1-3 Why do we name it after a “computer”?"></a>1-3 Why do we name it after a “computer”?</h3><p>Notice that the computation can be interpreted by<br>$$<br>\text{input: }x_0 \xrightarrow{f_0(x)} x_1<br>\xrightarrow{f_2(x)} \cdots \xrightarrow{f_{m -1 }(x)} \text{output: }x_{m}<br>$$</p>
 <p>where</p>
 <ul>
-<li>${x_j}$ are <strong>classical datum</strong></li>
-<li>${f_j(x)}$ are some <strong>classical operations</strong>, which form some classical algorithm</li>
+<li>${x_j}$ are some <strong>classical data</strong></li>
+<li>${f_j(x)}$ are some <strong>classical operations</strong>, which form a classical algorithm</li>
 <li>The process is realized on a physical platform (computer)</li>
 </ul>
-<hr>
-<p>A controllable quantum system performs<br>$$<br>|\psi_m\rangle &#x3D; U_{m-1}\cdots U_{1} U_0 |\psi_0\rangle<br>$$</p>
+<p>On the other hand, a controllable quantum system performs<br>$$<br>|\psi_m\rangle &#x3D; U_{m-1}\cdots U_{1} U_0 |\psi_0\rangle<br>$$</p>
 <ul>
 <li>${\psi_j}$ are can analogously called <strong>quantum datum</strong></li>
-<li>${U_j}$ are <strong>quantum operations</strong>, which form some quantum algorithm</li>
+<li>${U_j}$ are <strong>quantum operations</strong>, which form  quantum algorithm</li>
 <li>The process is realized on a physical platform (quantum computer)</li>
 </ul>
-<h3 id="1-4-From-classical-computing-to-quantum-computing"><a href="#1-4-From-classical-computing-to-quantum-computing" class="headerlink" title="1-4 From classical computing to quantum computing"></a>1-4 From classical computing to quantum computing</h3><p>Since the theory of classical computing is mature, we would like to analogously develop <strong>the theory of quantum computing</strong> base on it.</p>
-<blockquote>
-<p>In classical computing, the elemental computational unit is a <strong>bit</strong>, which is a binary number<br>$$<br>c \in {0, 1}<br>$$<br>A bit is <u>physically</u> realized on some logic circuits on a <strong>semiconductor chip</strong>.</p>
-</blockquote>
-<p>Since quantum mechanics permits <strong>superposition</strong>, therefore a natural idea is to consider a <strong>quantum bit</strong>, or <strong>qubit</strong>, which takes the form $\alpha|0\rangle + \beta|1\rangle$. </p>
-<ul>
-<li><u>Physically</u>, this can be realized by some two-level system, like the spin of an electron.</li>
-<li>A classical bit can be viewed as the special case of a qubit.</li>
-</ul>
-<h2 id="2-Single-qubit"><a href="#2-Single-qubit" class="headerlink" title="2. Single qubit"></a>2. Single qubit</h2><h3 id="2-1-Qubit"><a href="#2-1-Qubit" class="headerlink" title="2-1 Qubit"></a>2-1 Qubit</h3><p>Based on the  definition above, a general qubit $|q\rangle$ can be written as<br>$$<br>|q\rangle &#x3D; \cos\frac{\theta}{2}|0\rangle + \sin\frac{\theta}{2}e^{i\phi} |1\rangle<br>$$<br>where<br>$$<br>|0\rangle &#x3D;<br>\begin{bmatrix}<br>1 \ 0<br>\end{bmatrix} \<br>|1\rangle &#x3D;<br>\begin{bmatrix}<br>0 \ 1<br>\end{bmatrix}<br>$$<br>then<br>$$<br>|q\rangle &#x3D; \begin{bmatrix}<br>\cos(\theta&#x2F;2) \<br>\sin(\theta&#x2F;2) e^{i\phi}<br>\end{bmatrix}<br>$$</p>
-<blockquote>
-<p>$|q\rangle$ has a <strong>1-1 mapping</strong> with points on a <strong>Bloch sphere</strong>, represented by a unit vector:<br>$$<br>\vec{r}&#x3D;(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta)<br>$$<br><img src="/Users/cathan/Library/Application Support/typora-user-images/image-20230515142305407.png" alt="image-20230515142305407" style="zoom: 33%;" /></p>
-</blockquote>
-<h3 id="2-2-Elemental-single-qubit-quantum-operations"><a href="#2-2-Elemental-single-qubit-quantum-operations" class="headerlink" title="2-2 Elemental single-qubit quantum operations"></a>2-2 Elemental single-qubit quantum operations</h3><p>From the view of a Bloch sphere, the effect of a unitary operation $U$ on a qubit is thus<br>$$<br>(\sin\theta\cos\phi, \sin\theta\sin\phi, \cos\theta) \xrightarrow{U}  (\sin\theta’\cos\phi’, \sin\theta’\sin\phi’, \cos\theta’)<br>$$<br>and $U\in \mathcal{SU}(2)$. </p>
-<hr>
-<p>A choice of generators of $\mathcal{SU}(2)$ are ${J^j&#x3D; \sigma^j&#x2F;2}$. where ${\sigma^j}$ are <strong>Pauli operators</strong>.</p>
-<blockquote>
-<p>In quantum computing, we prefer the notations that<br>$$<br>X\equiv\sigma^x,\ Y\equiv\sigma^y,\ Z\equiv\sigma^z<br>$$</p>
-</blockquote>
-<p>Under the representation of $Z$, define<br>$$<br>\begin{split}<br>&amp;R_x(\theta) \equiv e^{-i\theta X&#x2F;2} &#x3D;<br>\cos\frac{\theta}{2}I - i\sin\frac{\theta}{2}X &#x3D;<br>\begin{bmatrix}<br>\cos(\theta&#x2F;2) &amp; -i\sin(\theta&#x2F;2) \<br>-i\sin(\theta&#x2F;2) &amp; \cos(\theta&#x2F;2)<br>\end{bmatrix}<br>\<br>&amp;R_y(\theta) \equiv e^{-i\theta Y&#x2F;2} &#x3D;<br>\cos\frac{\theta}{2}I - i\sin\frac{\theta}{2}Y &#x3D;<br>\begin{bmatrix}<br>\cos(\theta&#x2F;2) &amp; -\sin(\theta&#x2F;2) \<br>\sin(\theta&#x2F;2) &amp; \cos(\theta&#x2F;2)<br>\end{bmatrix}<br>\<br>&amp;R_z(\theta) \equiv e^{-i\theta Z&#x2F;2}  &#x3D;<br>\cos\frac{\theta}{2}I - i\sin\frac{\theta}{2}Z &#x3D;<br>\begin{bmatrix}<br>e^{-i\theta&#x2F;2} &amp; 0 \<br>0 &amp; e^{i\theta&#x2F;2}<br>\end{bmatrix}<br>\end{split}<br>$$</p>
-<ul>
-<li>$R_x(\theta)$, $R_y(\theta)$, and $R_z(\theta)$ are called <strong>rotation gates</strong>, which are the <strong>elemental single-qubit operations</strong>, and any single qubit operation $U$ can be reduced to a combination of them.</li>
-</ul>
-<blockquote>
-<p>As a global factor does not affect a state, typically we <strong>do not distinguish two operators up to a global phase</strong>. For example, sometimes we write<br>$$<br>R_z(\theta)&#x3D;\begin{bmatrix}<br>1 &amp; 0 \<br>0 &amp; e^{i\theta}<br>\end{bmatrix}<br>$$</p>
-</blockquote>
-<h3 id="2-3-Frequently-used-single-qubit-quantum-gates"><a href="#2-3-Frequently-used-single-qubit-quantum-gates" class="headerlink" title="2-3 Frequently used single-qubit quantum gates"></a>2-3 Frequently used single-qubit quantum gates</h3><blockquote>
-<ul>
-<li>Following the convention of classical logic circuit, a <strong>quantum operation</strong> is also called a <strong>quantum gate</strong>. We use this two names interchangeably.</li>
-</ul>
-</blockquote>
-<p>For convenience, there are some <strong>predefined</strong> single-qubit operations.</p>
-<h4 id="2-3-1-Pauli-gates"><a href="#2-3-1-Pauli-gates" class="headerlink" title="2-3-1 Pauli gates"></a>2-3-1 Pauli gates</h4><p>$$<br>\begin{split}<br>&amp;X \equiv   iR_x(\pi) &#x3D;<br>\begin{bmatrix}<br>0 &amp; 1 \<br>1 &amp; 0<br>\end{bmatrix}<br>\<br>&amp;Y \equiv iR_y(\pi) &#x3D;<br>\begin{bmatrix}<br>0 &amp; -i \<br>i &amp; 0<br>\end{bmatrix}<br>\<br>&amp;Z \equiv iR_z(\pi) &#x3D;<br>\begin{bmatrix}<br>1 &amp; 0 \<br>0 &amp; -1<br>\end{bmatrix}<br>\end{split}<br>$$</p>
-<blockquote>
-<ul>
-<li>$X$ gate is also called the $\text{NOT}$ gate.</li>
-</ul>
-</blockquote>
-<h4 id="2-3-2-Hadamard-gates"><a href="#2-3-2-Hadamard-gates" class="headerlink" title="2-3-2 Hadamard gates"></a>2-3-2 Hadamard gates</h4><p>$$<br>\begin{split}<br>H\equiv &amp; i R_x(\pi) R_y(\frac{\pi}{2})<br> \<br> &#x3D; &amp; \begin{bmatrix}<br> 0 &amp; 1 \ 1 &amp; 0<br> \end{bmatrix}<br> \begin{bmatrix}<br> 1&#x2F;\sqrt{2} &amp; -1&#x2F;\sqrt{2} \<br> 1&#x2F;\sqrt{2} &amp; 1&#x2F;\sqrt{2}<br> \end{bmatrix}<br> \<br>&#x3D; &amp; \frac{1}{\sqrt{2}}\begin{bmatrix}<br>1 &amp; 1 \<br>1 &amp; -1<br>\end{bmatrix}<br>\end{split}<br>$$</p>
-<p>It is easy to check that $H&#x3D;(X+Z)&#x2F;\sqrt{2}$.</p>
-<h1 id="The-effect-of-H-is-to-map-a-classical-bit-to-a-quantum-bit-and-vice-versa-For-example-H-0-rangle-frac-1-sqrt-2-begin-bmatrix-1-1-1-1-end-bmatrix-begin-bmatrix-1-0-end-bmatrix"><a href="#The-effect-of-H-is-to-map-a-classical-bit-to-a-quantum-bit-and-vice-versa-For-example-H-0-rangle-frac-1-sqrt-2-begin-bmatrix-1-1-1-1-end-bmatrix-begin-bmatrix-1-0-end-bmatrix" class="headerlink" title="The effect of $H$ is to map a classical bit to a quantum bit, and vice versa. For example,$$H|0\rangle &#x3D; \frac{1}{\sqrt{2}} \begin{bmatrix}1 &amp; 1 \1 &amp; -1\end{bmatrix}\begin{bmatrix}1\0\end{bmatrix}"></a>The effect of $H$ is to map a classical bit to a quantum bit, and vice versa. For example,<br>$$<br>H|0\rangle &#x3D; \frac{1}{\sqrt{2}} \begin{bmatrix}<br>1 &amp; 1 \<br>1 &amp; -1<br>\end{bmatrix}<br>\begin{bmatrix}<br>1\<br>0<br>\end{bmatrix}</h1><p>\frac{1}{\sqrt{2}}<br>\begin{bmatrix}<br>1\<br>1<br>\end{bmatrix} &#x3D; \frac{1}{\sqrt{2}}|0\rangle + \frac{1}{\sqrt{2}}|1\rangle<br>$$</p>
-<h4 id="2-3-3-Phase-gate-or-S-gate"><a href="#2-3-3-Phase-gate-or-S-gate" class="headerlink" title="2-3-3 Phase gate or $S$ gate"></a>2-3-3 Phase gate or $S$ gate</h4><p>$$<br>S\equiv R_z(\frac{\pi}{2}) &#x3D; \begin{bmatrix}<br>1 &amp; 0 \<br>0 &amp; i<br>\end{bmatrix}<br>$$</p>
-<h3 id="2-3-4-pi-8-gate-or-T-gate"><a href="#2-3-4-pi-8-gate-or-T-gate" class="headerlink" title="2-3-4 $\pi&#x2F;8$ gate or $T$ gate"></a>2-3-4 $\pi&#x2F;8$ gate or $T$ gate</h3><h1 id="T-equiv-R-z-frac-pi-4-e-i-pi-8-begin-bmatrix-e-i-pi-8-0-0-e-i-pi-8-end-bmatrix"><a href="#T-equiv-R-z-frac-pi-4-e-i-pi-8-begin-bmatrix-e-i-pi-8-0-0-e-i-pi-8-end-bmatrix" class="headerlink" title="$$T\equiv R_z(\frac{\pi}{4}) &#x3D; e^{i\pi&#x2F;8}\begin{bmatrix}e^{-i\pi&#x2F;8} &amp; 0 \0 &amp; e^{i\pi&#x2F;8}\end{bmatrix}"></a>$$<br>T\equiv R_z(\frac{\pi}{4}) &#x3D; e^{i\pi&#x2F;8}<br>\begin{bmatrix}<br>e^{-i\pi&#x2F;8} &amp; 0 \<br>0 &amp; e^{i\pi&#x2F;8}<br>\end{bmatrix}</h1><p>\begin{bmatrix}<br>1 &amp; 0 \<br>0 &amp; e^{i\pi&#x2F;4}<br>\end{bmatrix}<br>$$</p>
-<h2 id="3-Multi-qubits"><a href="#3-Multi-qubits" class="headerlink" title="3. Multi qubits"></a>3. Multi qubits</h2><h3 id="3-1-Universal-quantum-computing"><a href="#3-1-Universal-quantum-computing" class="headerlink" title="3-1 Universal quantum computing"></a>3-1 Universal quantum computing</h3><p>Suppose $|\psi\rangle$ and $|\psi’\rangle$ are two <strong>arbitrary</strong> states of a <strong>n-qubit</strong> quantum system.</p>
-<p>If there exists <strong>a set of quantum gates</strong> acting on the system, s.t. one can use them approximate $|\psi’\rangle$ to any precision starting from $|\psi\rangle$, then we call this set a <strong>universal set of quantum gates.</strong></p>
-<blockquote>
-<ul>
-<li><p><strong>Universal quantum computing:</strong> computing under some universal set of quantum gates</p>
-</li>
-<li><p><strong>Universal quantum computer:</strong> a quantum computer able to do universal quantum computing</p>
-</li>
-</ul>
-</blockquote>
-<hr>
-<p>Apparently, for a single qubit system, the collection of all the single-qubit gates, i.e. the $\mathcal{SU}(2)$ group, form a universal set of quantum gates.</p>
-<blockquote>
-<p><strong>Q: if we have two qubits, can we do universal quantum computing only by performing single-qubit gates on them?</strong></p>
-</blockquote>
-<h3 id="3-2-Entanglement"><a href="#3-2-Entanglement" class="headerlink" title="3-2 Entanglement"></a>3-2 Entanglement</h3><p>Consider a two-qubit system $|\psi\rangle &#x3D; |0\rangle_0 \otimes |0\rangle_1$, where the subscripts denote <strong>labels</strong>. </p>
-<p>If we only have single qubit gates, then any $|\psi’\rangle$ that<br>$$<br>|\psi’\rangle &#x3D; U_0^1|0\rangle_0 \otimes U_1^1|1\rangle_1<br>$$<br>is a <strong>product state</strong>.</p>
-<ul>
-<li>where $U_0^1$ and $U_1^1$ are single qubit operator acting on the 0th qubit and 1st qubit, respectively.</li>
-</ul>
-<hr>
-<p>With single-qubit gates, we can never get a state like<br>$$<br>|\phi\rangle &#x3D; \frac{1}{\sqrt{2}} \bigg(<br>|0\rangle_0\otimes |0\rangle_1 + |1\rangle_0\otimes |1\rangle_1<br>\bigg)<br>$$<br>which is a <strong>entangled state</strong>. </p>
-<blockquote>
-<p>To do <strong>universal quantum computing</strong> in a two-qubit system, we need some new gates!</p>
-</blockquote>
-<h3 id="3-3-Controlled-NOT-gate"><a href="#3-3-Controlled-NOT-gate" class="headerlink" title="3-3 Controlled-NOT gate"></a>3-3 Controlled-NOT gate</h3><p><strong>Definition</strong> of the controlled-NOT gate or the $\text{CNOT}$ gate:</p>
-<blockquote>
-<ul>
-<li><p>It is a <strong>double-qubit</strong> operation</p>
-</li>
-<li><p>One qubit serves as the <strong>controlled qubit</strong>; the other serves as the <strong>target qubit</strong></p>
-</li>
-<li><p>If the controlled qubit is in state $|1\rangle$, perform a $X$ gate on the target qubit</p>
-</li>
-<li><p>If the controlled qubit is in state $|0\rangle$, do nothing</p>
-</li>
-</ul>
-</blockquote>
-<hr>
-<p>For example,<br>$$<br>\begin{split}<br>|0\rangle_0|0\rangle_1 &amp; \xrightarrow{H_0}<br>\frac{1}{\sqrt{2}}\bigg(<br>|0\rangle_0|0\rangle_1 + |1\rangle_0|0\rangle_1<br>\bigg)  \<br>&amp; \xrightarrow{\text{CNOT}_{0\to1}}<br>\frac{1}{\sqrt{2}}\bigg(<br>|0\rangle_0|0\rangle_1 + |1\rangle_0|1\rangle_1<br>\bigg)<br>\end{split}<br>$$</p>
-<blockquote>
-<ul>
-<li>For simplicity, we drop “$\otimes$” here.</li>
-</ul>
-</blockquote>
-<p>The matrix representation of $\text{CNOT}$ gate in this case (<strong>big-endian convention</strong>) is<br>$$<br>\begin{split}<br>\text{CNOT}<em>{0\to 1} &#x3D; \begin{bmatrix}<br>1 &amp; 0 &amp; 0 &amp; 0 \<br>0 &amp; 1 &amp; 0 &amp; 0 \<br>0 &amp; 0 &amp; 0 &amp; 1 \<br>0 &amp; 0 &amp; 1 &amp; 0<br>\end{bmatrix},\<br>\text{CNOT}</em>{1\to 0} &#x3D; \begin{bmatrix}<br>1 &amp; 0 &amp; 0 &amp; 0 \<br>0 &amp; 0 &amp; 0 &amp; 1 \<br>0 &amp; 0 &amp; 1 &amp; 0 \<br>0 &amp; 1 &amp; 0 &amp; 0<br>\end{bmatrix} \<br>\end{split}<br>$$<br><u><strong>THEOREM:</strong></u></p>
-<blockquote>
-<p><strong>Single qubit gates and $\text{CNOT}$ gate</strong> compose a universal set of quantum gates for any n-qubit systems.</p>
-</blockquote>
-<h3 id="3-4-Visualization-with-quantum-circuit"><a href="#3-4-Visualization-with-quantum-circuit" class="headerlink" title="3-4 Visualization with quantum circuit"></a>3-4 Visualization with quantum circuit</h3><p>Quantum operations on qubits can be visualized on a <strong>quantum circuit</strong>. </p>
-<p>For example, for a quantum circuit </p>
-<img src="/Users/cathan/Library/Application Support/typora-user-images/image-20230515221933251.png" alt="image-20230515221933251" style="zoom: 33%;" />
-
-<ul>
-<li><strong>Each wire correspond to a qubit.</strong> Usually the upmost one denotes the 0th qubit by default.</li>
-<li>The $|0\rangle$ on the left side of a wire denotes the <strong>initial state</strong> of the qubit</li>
-<li>From left to right, a qubit is acted by each gate in time order.</li>
-</ul>
-<blockquote>
-<ul>
-<li><p>the square with $H$ denotes the Hadamard gate (other one-qubit gates are similar)</p>
-</li>
-<li><p>the two-qubit gate in this circuit is the $\text{CNOT}$ gate, and</p>
-<ul>
-<li>the <strong>solid circle</strong> denotes the controlled qubit</li>
-<li>the <strong>open circle with a cross</strong> denotes the target qubit</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<p>This circuit actually realizes<br>$$<br>|00\rangle \to \frac{1}{\sqrt{2}} \bigg(|00\rangle + |11\rangle \bigg)<br>$$<br>in the last section.</p>
-<blockquote>
-<p>We take the big-endian convention, and drop all subscripts from now.</p>
-</blockquote>
-<h3 id="3-5-Frequently-used-muti-qubit-gates"><a href="#3-5-Frequently-used-muti-qubit-gates" class="headerlink" title="3-5 Frequently used muti-qubit gates"></a>3-5 Frequently used muti-qubit gates</h3><h4 id="3-5-1-text-SWAP-gate-two-qubit"><a href="#3-5-1-text-SWAP-gate-two-qubit" class="headerlink" title="3-5-1 $\text{SWAP}$ gate (two-qubit)"></a>3-5-1 $\text{SWAP}$ gate (two-qubit)</h4><p>$\text{SWAP}$ gate swaps the postions of two qubits, i.e.<br>$$<br>|a\rangle|b\rangle \xrightarrow{\text{SWAP}}|b\rangle|a\rangle<br>$$</p>
-<ul>
-<li>Matrix representation:</li>
-</ul>
-<p>$$<br>\text{SWAP}&#x3D;<br>\begin{bmatrix}<br>1 &amp; 0 &amp; 0 &amp; 0 \<br>0 &amp; 0 &amp; 1 &amp; 0 \<br>0 &amp; 1 &amp; 0 &amp; 0 \<br>0 &amp; 0 &amp; 0 &amp; 1<br>\end{bmatrix}<br>$$</p>
-<ul>
-<li>Visualization:</li>
-</ul>
-<img src="/Users/cathan/Library/Application Support/typora-user-images/image-20230515224259747.png" alt="image-20230515224259747" style="zoom: 33%;" />
-
-<h4 id="3-5-2-Muticontrolled-U-gate-text-C-m-U-Gate-two-or-more-qubits"><a href="#3-5-2-Muticontrolled-U-gate-text-C-m-U-Gate-two-or-more-qubits" class="headerlink" title="3-5-2 Muticontrolled-$U$ gate &#x2F; $\text{C}^m-U$ Gate (two or more qubits)"></a>3-5-2 Muticontrolled-$U$ gate &#x2F; $\text{C}^m-U$ Gate (two or more qubits)</h4><p>This is the generalization of $\text{CNOT}$ gate, i.e.</p>
-<ul>
-<li>We have <strong>$m$ controlled qubits</strong> and <strong>$n$ target qubits</strong></li>
-<li>If each of the controlled qubits satisfies <strong>the requirement of it</strong>, perform a $n$-qubit quatum gate $U$ on the $n$ target qubits <ul>
-<li>The requirement of a controlled qubit is: <strong>it must be $|0\rangle$ or $|1\rangle$</strong>, denoted with <strong>open and solid circle</strong> respectively on a circuit</li>
-</ul>
-</li>
-</ul>
-<hr>
-<p>For example, here are two Multicontrolled-$U$ gates:</p>
-<img src="/Users/cathan/Library/Application Support/typora-user-images/image-20230515230014396.png" alt="image-20230515230014396" style="zoom: 25%;" />
-
-<blockquote>
-<ul>
-<li><strong>Left:</strong> iff the 2nd qubit is $|1\rangle$, swap the 0th and 1st qubit</li>
-<li><strong>Right:</strong>  iff the 0th qubit is $|1\rangle$ and the 2nd qubit is $|0\rangle$, rotate the 1st qubit in $y$ direction with rotation angle $\alpha$.</li>
-</ul>
-</blockquote>
-<hr>
-<p>Among these muticontrolled gates:</p>
-<blockquote>
-<ul>
-<li>$\text{CNOT}$ gate is also called the $\text{CX}$ gate </li>
-<li>$\text{CCNOT}$ gate is also called the <strong>Toffoli gate</strong> or $\text{CCX}$ gate</li>
-<li>$\text{CSWAP}$ gate is also called the <strong>Fradkin gate</strong></li>
-</ul>
-</blockquote>
-<h3 id="3-6-Reversible-operation"><a href="#3-6-Reversible-operation" class="headerlink" title="3-6 Reversible operation"></a>3-6 Reversible operation</h3><ul>
-<li><p>Since all gates in quantum computing are unitary, these operations are <strong>reversible</strong>.</p>
-</li>
-<li><p>In classical computing, we may have $x\to f(x)$ but $f^{-1}$ does not exsit.</p>
-</li>
-</ul>
-<hr>
-<p>This can be fixed by making a reversible operation $U_f$ which has the same effect of $f(x)$ with the help of some $\text{CNOT}$ gates. The final $U_f$ performs<br>$$<br>(x,y) \xrightarrow{U_f}(x,y\oplus f(x))<br>$$<br>where $\oplus$ is the <strong>$\text{XOR}$ operation</strong> or the modulo 2 operation.</p>
-<blockquote>
-<ul>
-<li>In quantum computing, we use $f$ and $U_f$ interchangeably, i.e. all $f$ are reversible or modified to be reversible by default.</li>
-</ul>
-</blockquote>
-<h2 id="4-Deutsch-Jozsa-algorithm-1992"><a href="#4-Deutsch-Jozsa-algorithm-1992" class="headerlink" title="4. Deutsch-Jozsa algorithm (1992)"></a>4. Deutsch-Jozsa algorithm (1992)</h2><h3 id="4-1-Milestones-in-the-area-of-quantum-algorithm"><a href="#4-1-Milestones-in-the-area-of-quantum-algorithm" class="headerlink" title="4-1 Milestones in the area of quantum algorithm"></a>4-1 Milestones in the area of quantum algorithm</h3><ul>
-<li><strong>P. Benioff</strong>: introduced the model of <u>quantum turing machine</u> (1980)</li>
-<li><strong>R. Feynman</strong>: proposed the concept of <u>quantum computer</u> (1981)</li>
-<li><strong>D. Deutsch:</strong> proposed <u>the first quantum algorithm</u> (1985)</li>
-<li><strong>P. Shor:</strong> proposed the quantum factoring algorithm or <u>Shor’s algorithm</u> (1994)<ul>
-<li><em>Make quantum computing great again! <del>(MQCGA!)</del></em></li>
-</ul>
-</li>
-<li><strong>A. Harrow, A. Hassidim, and S. Lloyd</strong>: proposed the first quantum linear system solver (QLSS), or <u>HHL algorithm</u> (2008)  <ul>
-<li><em>The birth of Quantum Machine Learning (QML)</em></li>
-</ul>
-</li>
-<li><strong>A. Peruzzo, et al.:</strong> proposed the <u>Variational Quantum Eigensolver (VQE)</u> (2013)<ul>
-<li><em>Representative near-term algorithm in Noisy Intermediate Scale Quantum (NISQ) era</em></li>
-</ul>
-</li>
-</ul>
-<h3 id="4-2-Deutsch’s-problem"><a href="#4-2-Deutsch’s-problem" class="headerlink" title="4-2 Deutsch’s problem"></a>4-2 Deutsch’s problem</h3><blockquote>
-<p><strong>Deutsch’s problem:</strong></p>
-<p>Given a function $f:{0,1}^n \to {0,1}$</p>
-<ul>
-<li>If $\forall$ input, the output gives the same value, we say $f$ is <em>constant</em></li>
-<li>If half of the inputs give $0$ and the others give $1$, we say $f$ is <em>balanced</em></li>
-<li>$f$ is either <em>constant</em> or <em>balanced</em></li>
-</ul>
-<p>Determine whether $f$ is constant.</p>
-</blockquote>
-<ul>
-<li><p>In classical computing, one must compute $f(x)$ at most $2^{n}&#x2F;2+1$ times, with complexity $\mathcal{O}(2^n)$.</p>
-</li>
-<li><p>$\forall$ $n$, the <strong>Deutsch-Jozsa algorithm</strong> can solve this problem <strong>in one time</strong>, with complexity $\mathcal{O}(1)$.</p>
-<ul>
-<li><em>Exponential speed-up!</em></li>
-</ul>
-</li>
-</ul>
-<h3 id="4-3-Algorithm"><a href="#4-3-Algorithm" class="headerlink" title="4-3 Algorithm"></a>4-3 Algorithm</h3><img src="/Users/cathan/Library/Application Support/typora-user-images/image-20230516113751844.png" alt="image-20230516113751844" style="zoom:33%;" />
-
-<ul>
-<li>The “$&#x2F;^n$” in the first wire means this is a collection of $n$ qubits, which is also called a <strong>register</strong>.</li>
-</ul>
-<hr>
-<p>The operations on $|\psi_0\rangle &#x3D; |0\rangle^{\otimes n}\otimes |1\rangle$ gives<br>$$<br>\begin{split}<br>|\psi_1\rangle &#x3D;&amp; \sum_{x_0,x_1,\cdots, x_{n-1}\in{0,1}} \frac{|x_0x_1\cdots x_{n-1}\rangle}{\sqrt{2^n}} \otimes \frac{|0\rangle - |1\rangle}{\sqrt{2}} \<br>\equiv &amp;  \sum_{x\in{0,1}^n} \frac{|x\rangle}{\sqrt{2^n}} \otimes \frac{|0\rangle - |1\rangle}{\sqrt{2}} \<br>\end{split}<br>$$</p>
-<hr>
-<p>$U(f)$ is the $f$ on quantum circuit, which, according to its defintion, leads to<br>$$<br>\begin{split}<br>|\psi_2\rangle &#x3D;  &amp;\sum_x \frac{|x\rangle }{\sqrt{2^n}}\otimes (-1)^{f(x)} \frac{|0\rangle - |1\rangle}{\sqrt{2}} \<br>&#x3D; &amp; \sum_x\frac{(-1)^{f(x)}|x\rangle}{\sqrt{2^n}} \otimes \frac{|0\rangle - |1\rangle}{\sqrt{2}}<br>\end{split}<br>$$</p>
-<hr>
-<blockquote>
-<p>Notice that<br>$$<br>H|x\rangle &#x3D; \frac{\sum_{z\in{0,1}} (-1)^{xz}|z\rangle}{\sqrt{2}}<br>$$<br>and<br>$$<br>\begin{split}<br>H^{\otimes n} |x_0,x_1,\cdots x_{n-1}\rangle &#x3D;&amp; \frac{\sum_{z_0,z_1,\cdots,z_{n-1}\in{0,1}}(-1)^{x_0z_0 + x_1z_1+\cdots x_{n-1}z_{n-1}} |z_0,z_1,\cdots z_{n-1}\rangle}{\sqrt{2^n}} \<br>&#x3D; &amp; \frac{\sum_{\mathbf{z}}(-1)^{\mathbf{x\cdot z}}|z\rangle}{\sqrt{2^n}}<br>\end{split}<br>$$</p>
-</blockquote>
-<p>Therefore<br>$$<br>|\psi_3\rangle &#x3D; \sum_{\mathbf{z}}\sum_x \frac{(-1)^{\mathbf{x\cdot z} + f(x)}|z\rangle}{2^n} \otimes \frac{|0\rangle - |1\rangle}{\sqrt{2}}<br>$$</p>
-<hr>
-<p>Now we <strong>measure</strong> the first register, then the probability to get $|0\rangle^{\otimes n}$ is<br>$$<br>\text{prob}\bigg(|z\rangle &#x3D; |0\rangle^{\otimes n}\bigg) &#x3D; \Bigg| \sum_x\frac{(-1)^{f(x)}}{2^n} \Bigg|^2<br>$$</p>
-<ul>
-<li>If $f(x)$ is constant, the probability is ONE.</li>
-<li>If $f(x)$ is balanced, the probability is ZERO.</li>
-</ul>
-<h2 id="5-Quantum-advantage"><a href="#5-Quantum-advantage" class="headerlink" title="5 Quantum advantage"></a>5 Quantum advantage</h2><h3 id="5-1-Computational-complexity"><a href="#5-1-Computational-complexity" class="headerlink" title="5-1 Computational complexity"></a>5-1 Computational complexity</h3><blockquote>
-<p><em>Image source: Wikipedia</em></p>
-</blockquote>
-<p><strong><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/BQP_complexity_class_diagram.svg/1920px-BQP_complexity_class_diagram.svg.png" alt="undefined" style="zoom: 25%;" /></strong><br>$$<br>\mathbf{P}\subseteq \mathbf{NP}  \subseteq \mathbf{PSPACE}\<br>\mathbf{P}\subseteq\mathbf{BQP}  \subseteq \mathbf{PSPACE}<br>$$</p>
-<ul>
-<li><p>$\mathbf{P}$ Vs. $\mathbf{NP}$?</p>
-</li>
-<li><p>$\mathbf{BQP}$ Vs. $\mathbf{NP}$?</p>
-</li>
-</ul>
-<h3 id="5-2-Three-classes-of-quantum-algorithm-with-definite-quantum-advantage"><a href="#5-2-Three-classes-of-quantum-algorithm-with-definite-quantum-advantage" class="headerlink" title="5-2 Three classes of quantum algorithm with definite quantum advantage"></a>5-2 Three classes of quantum algorithm with definite quantum advantage</h3><ol>
-<li><p>Algorithms based on quantum Fourier transform (QFT)</p>
-</li>
-<li><p>Quantum search algorithm</p>
-</li>
-<li><p>(Digital) quantum simulation</p>
-</li>
-</ol>
-<h3 id="5-3-Quantum-computer-or-classical-computer"><a href="#5-3-Quantum-computer-or-classical-computer" class="headerlink" title="5-3 Quantum computer or classical computer?"></a>5-3 Quantum computer or classical computer?</h3><blockquote>
-<ul>
-<li><p>Though universal quantum computing is the superset of the classical computing, it is a HUGE COST to utterly give up classical computers.</p>
-</li>
-<li><p>We are FARRRRRR way from a large-scale <strong>fault-tolerant</strong> programmable universal quantum computer <del>and a Quantum GPT</del>.</p>
-</li>
-<li><p><strong>Special-purpose quantum computer&#x2F;machine</strong>: </p>
-<ul>
-<li>Analog Quantum Simulation (AQS), Quantum Annealer, etc.</li>
-</ul>
-</li>
-</ul>
-</blockquote>
+<h3 id="1-4-From-classical-computing-to-quantum-computing"><a href="#1-4-From-classical-computing-to-quantum-computing" class="headerlink" title="1-4 From classical computing to quantum computing"></a>1-4 From classical computing to quantum computing</h3><p>Since the theory of classical computing is mature, we would like to analogously develop the theory of quantum computing base on it.</p>
+<p>In classical computing, the elemental computational unit is called a <strong>bit</strong>, which is a binary number<br>$$<br>c \in {0, 1}<br>$$<br>A bit can be physically realized by a classical two-level system like two different voltage levels or the presence or absence of a signal on a semiconductor chip.</p>
+<p>The first step to generalize the classical theory to quantum is to introduce a quantum counterpart, which we call a <strong>quantum bit</strong>, or <strong>qubit</strong>.</p>
+<p>Since quantum mechanics permits superposition, therefore we can write it in the form<br>$$<br>q&#x3D;\alpha|0\rangle + \beta|1\rangle<br>$$<br>where $\alpha,\beta\in\mathbb{C}$ and $|\alpha|^2+|\beta|^2&#x3D;1$.</p>
+<p>Physically, a qubit can by realized by some quantum two-level system like the Rydberg atom.</p>
+<h2 id="2-Single-qubit"><a href="#2-Single-qubit" class="headerlink" title="2. Single qubit"></a>2. Single qubit</h2><h3 id="2-1-Qubit"><a href="#2-1-Qubit" class="headerlink" title="2-1 Qubit"></a>2-1 Qubit</h3><p>Now we make the definition of a qubit more specific.</p>
+<p>Any qubit $|q\rangle$ can be written as<br>$$<br>|q\rangle &#x3D; \cos\frac{\theta}{2}|0\rangle + \sin\frac{\theta}{2}e^{i\phi} |1\rangle<br>$$<br>where<br>$$<br>|0\rangle &#x3D;<br>\begin{bmatrix}<br>1 \ 0<br>\end{bmatrix} \<br>|1\rangle &#x3D;<br>\begin{bmatrix}<br>0 \ 1<br>\end{bmatrix}<br>$$<br>therefore<br>$$<br>|q\rangle &#x3D; \begin{bmatrix}<br>\cos(\theta&#x2F;2) \<br>\sin(\theta&#x2F;2) e^{i\phi}<br>\end{bmatrix}<br>$$</p>
+<p>$|q\rangle$ has a <strong>1-1 mapping</strong> with points on a <strong>Bloch sphere</strong>, represented by a unit vector:<br>$$<br>\vec{r}&#x3D;(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta)<br>$$</p>
+<p>To be update…</p>
  
       <!-- reward -->
       
