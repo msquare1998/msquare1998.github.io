@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Introduction to Circuit-Based Quantum Computing |  M Square</title>
+      <title>Introduction |  M Square</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -51,7 +51,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-intro-qc"
+  id="post-intro-qc0"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -62,7 +62,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Introduction to Circuit-Based Quantum Computing
+  Introduction
 </h1>
  
 
@@ -79,46 +79,14 @@
   <blockquote>
 <p>Author: Ming</p>
 <p>Last update: Feb 25, 2024</p>
-<p>Refs: </p>
+</blockquote>
+<p>These notes are based on the mini-lecture I gave to my groupmates and some of my collaborators on May 18, 2023. Unlike most learning materials which simply generalize classical computer science to a quantum version, I try to organize my thoughts from a more quantum mechanical view. Therefore, before you read them, it is assumed that you have had some basic knowledge of quantum mechanics.</p>
+<p>The main references I use are</p>
 <ul>
 <li>Nielsen&amp;Chuang. <em>Quantum computation and quantum information</em>.</li>
 <li>Benenti et al. <em>Pinciples of quantum computation and quantum information.</em></li>
 </ul>
-</blockquote>
-<h2 id="1-Concept-of-quantum-computer"><a href="#1-Concept-of-quantum-computer" class="headerlink" title="1. Concept of quantum computer"></a>1. Concept of quantum computer</h2><h3 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1-1 Motivation"></a>1-1 Motivation</h3><p>In the Schrödinger picture, the evolution of a <strong>closed</strong> quantum system is described by<br>$$<br>|\psi’(t)\rangle &#x3D;  U(t)|\psi(0)\rangle<br>$$<br>where $U(t)\equiv U$ is some unitary operator, i.e. $UU^{\dagger}&#x3D;I$.</p>
-<p>There is a fact that <em>exactly simulating an arbitrary quantum system on classical computers need exponentially large resources</em>! How to bypass&#x2F;overcome this problem? </p>
-<p>A genius idea is to make $U$ controllable. If we have a controllable quantum system, i.e. we can evolve $|\psi\rangle$ into any $|\psi’\rangle$ as we want, then we are able to investigate the target quantum system by mimicing and calculating its behaviors and properties.</p>
-<p>Now the problem becomes</p>
-<ol>
-<li><p>How to physically build a controllable quantum system (hardware level)?</p>
-</li>
-<li><p>With what a specific $U$ can we evolve $|\psi\rangle$ to $|\psi’\rangle$ (algorithm or software level)?</p>
-</li>
-</ol>
-<p>Such a controllable quantum system is called a <strong>quantum computer.</strong></p>
-<p>Algorithms for finding&#x2F;designing $U$ for some problems on a quantum computer are called <strong>quantum algorithms</strong>. </p>
-<h3 id="1-3-Why-do-we-name-it-after-a-“computer”"><a href="#1-3-Why-do-we-name-it-after-a-“computer”" class="headerlink" title="1-3 Why do we name it after a “computer”?"></a>1-3 Why do we name it after a “computer”?</h3><p>Notice that the computation can be interpreted by<br>$$<br>\text{input: }x_0 \xrightarrow{f_0(x)} x_1<br>\xrightarrow{f_2(x)} \cdots \xrightarrow{f_{m -1 }(x)} \text{output: }x_{m}<br>$$</p>
-<p>where</p>
-<ul>
-<li>${x_j}$ are some <strong>classical data</strong></li>
-<li>${f_j(x)}$ are some <strong>classical operations</strong>, which form a classical algorithm</li>
-<li>The process is realized on a physical platform (computer)</li>
-</ul>
-<p>On the other hand, a controllable quantum system performs<br>$$<br>|\psi_m\rangle &#x3D; U_{m-1}\cdots U_{1} U_0 |\psi_0\rangle<br>$$</p>
-<ul>
-<li>${\psi_j}$ are can analogously called <strong>quantum datum</strong></li>
-<li>${U_j}$ are <strong>quantum operations</strong>, which form  quantum algorithm</li>
-<li>The process is realized on a physical platform (quantum computer)</li>
-</ul>
-<h3 id="1-4-From-classical-computing-to-quantum-computing"><a href="#1-4-From-classical-computing-to-quantum-computing" class="headerlink" title="1-4 From classical computing to quantum computing"></a>1-4 From classical computing to quantum computing</h3><p>Since the theory of classical computing is mature, we would like to analogously develop the theory of quantum computing base on it.</p>
-<p>In classical computing, the elemental computational unit is called a <strong>bit</strong>, which is a binary number<br>$$<br>c \in {0, 1}<br>$$<br>A bit can be physically realized by a classical two-level system like two different voltage levels or the presence or absence of a signal on a semiconductor chip.</p>
-<p>The first step to generalize the classical theory to quantum is to introduce a quantum counterpart, which we call a <strong>quantum bit</strong>, or <strong>qubit</strong>.</p>
-<p>Since quantum mechanics permits superposition, therefore we can write it in the form<br>$$<br>q&#x3D;\alpha|0\rangle + \beta|1\rangle<br>$$<br>where $\alpha,\beta\in\mathbb{C}$ and $|\alpha|^2+|\beta|^2&#x3D;1$.</p>
-<p>Physically, a qubit can by realized by some quantum two-level system like the Rydberg atom.</p>
-<h2 id="2-Single-qubit"><a href="#2-Single-qubit" class="headerlink" title="2. Single qubit"></a>2. Single qubit</h2><h3 id="2-1-Qubit"><a href="#2-1-Qubit" class="headerlink" title="2-1 Qubit"></a>2-1 Qubit</h3><p>Now we make the definition of a qubit more specific.</p>
-<p>Any qubit $|q\rangle$ can be written as<br>$$<br>|q\rangle &#x3D; \cos\frac{\theta}{2}|0\rangle + \sin\frac{\theta}{2}e^{i\phi} |1\rangle<br>$$<br>where<br>$$<br>|0\rangle &#x3D;<br>\begin{bmatrix}<br>1 \ 0<br>\end{bmatrix} \<br>|1\rangle &#x3D;<br>\begin{bmatrix}<br>0 \ 1<br>\end{bmatrix}<br>$$<br>therefore<br>$$<br>|q\rangle &#x3D; \begin{bmatrix}<br>\cos(\theta&#x2F;2) \<br>\sin(\theta&#x2F;2) e^{i\phi}<br>\end{bmatrix}<br>$$</p>
-<p>$|q\rangle$ has a <strong>1-1 mapping</strong> with points on a <strong>Bloch sphere</strong>, represented by a unit vector:<br>$$<br>\vec{r}&#x3D;(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta)<br>$$</p>
-<p>To be update…</p>
+<p>If you have any questions&#x2F;suggestions or find any typos, please feel free to email me by <a href="mailto:dingyiming@westlake.edu.cn">dingyiming@westlake.edu.cn</a>.</p>
  
       <!-- reward -->
       
@@ -135,11 +103,11 @@
    
   <nav class="article-nav">
     
-      <a href="/2024/02/25/aqc-intro/" class="article-nav-link">
+      <a href="/2024/02/26/intro-qc1/" class="article-nav-link">
         <strong class="article-nav-caption">Previous</strong>
         <div class="article-nav-title">
           
-            Introduction to adiabatic quantum computing
+            The concept of quantum computer
           
         </div>
       </a>
