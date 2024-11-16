@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang=cn>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="1. “Hello, Rust”1.2 安装Rust参考官网安装教程：https:&#x2F;&#x2F;www.rust-lang.org&#x2F; 1.3 Hello, WorldRust源文件的后缀为 main.rs Hello-World 程序 123fn main() &amp;#123;    println!(&quot;Hello, World!&quot;);&amp;#125;   fn 意为function 与C++中">
+<meta property="og:type" content="website">
+<meta property="og:title" content="rust_1">
+<meta property="og:url" content="http://example.com/notes/pages/rust_notes/rust-1.html">
+<meta property="og:site_name" content="Eppur si muove">
+<meta property="og:description" content="1. “Hello, Rust”1.2 安装Rust参考官网安装教程：https:&#x2F;&#x2F;www.rust-lang.org&#x2F; 1.3 Hello, WorldRust源文件的后缀为 main.rs Hello-World 程序 123fn main() &amp;#123;    println!(&quot;Hello, World!&quot;);&amp;#125;   fn 意为function 与C++中">
+<meta property="og:locale">
+<meta property="article:published_time" content="2024-11-16T08:59:39.000Z">
+<meta property="article:modified_time" content="2024-11-16T09:10:30.541Z">
+<meta property="article:author" content="Yi-Ming">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>rust_1</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    
+    <div class="content index width mx-auto px2 my4">
+        
+          <header id="header">
+  <a href="/">
+  
+    
+      <div id="logo" style="background-image: url(/images/furina2.png);"></div>
+    
+  
+    <div id="title">
+      <h1>Eppur si muove</h1>
+    </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#"><i class="fa fa-bars fa-2x"></i></a>
+      </li>
+       
+        <li><a href="/">Home</a></li>
+       
+        <li><a href="/notes/">Notes</a></li>
+       
+        <li><a href="/publ/">Publications</a></li>
+       
+        <li><a href="/pics/">Gallery</a></li>
+       
+        <li><a target="_blank" rel="noopener" href="https://github.com/msquare1998">GitHub</a></li>
+       
+        <li><a href="mailto:dingyiming@westlake.edu.cn">Contact</a></li>
+      
+    </ul>
+  </div>
+</header>
+
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="1-“Hello-Rust”"><a href="#1-“Hello-Rust”" class="headerlink" title="1. “Hello, Rust”"></a>1. “Hello, Rust”</h1><h2 id="1-2-安装Rust"><a href="#1-2-安装Rust" class="headerlink" title="1.2 安装Rust"></a>1.2 安装Rust</h2><p>参考官网安装教程：<a target="_blank" rel="noopener" href="https://www.rust-lang.org/">https://www.rust-lang.org/</a></p>
+<h2 id="1-3-Hello-World"><a href="#1-3-Hello-World" class="headerlink" title="1.3 Hello, World"></a>1.3 Hello, World</h2><p><strong>Rust源文件的后缀为</strong> <code>main.rs</code></p>
+<p><strong>Hello-World 程序</strong></p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">fn</span> <span class="title function_">main</span>() &#123;</span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;Hello, World!&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>fn</code> 意为function<ul>
+<li>与C++中的<code>int main() &#123;&#125;</code>不同，Rust中的<code>main()</code>函数没有返回值，它也是每个Rust程序最先执行的代码</li>
+</ul>
+</li>
+<li><code>println!</code>函数用于输出字符串，其中<code>ln</code>意为line<ul>
+<li>它是一个Rust macro（宏）</li>
+<li>上述程序中，<u>该函数前的缩进是4个空格而不是tab</u></li>
+<li>与C++一样，每一行代码以<code>;</code>结尾</li>
+</ul>
+</li>
+</ul>
+<p><strong>编译方式</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rustc main.rs</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>rustc</code>中的<code>c</code>意为compiler</li>
+<li><code>rustc</code>只适合编译简单的Rust程序，对于复杂的程序，需要适用<code>cargo</code></li>
+</ul>
+<p>编译成功后会生成二进制文件<code>main</code>，与源文件<code>main.rs</code>同名</p>
+<p><strong>运行二进制文件</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./main</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-4-Hello-Cargo"><a href="#1-4-Hello-Cargo" class="headerlink" title="1.4 Hello, Cargo"></a>1.4 Hello, Cargo</h2><p>Cargo是Rust的构建系统和包管理工具：</p>
+<ul>
+<li>构建代码、下载依赖库、构建库</li>
+</ul>
+<p>在终端可以通过命令<code>cargo --version</code>查看Cargo版本</p>
+<p><strong>使用Cargo创建项目：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cargo new project_name</span><br></pre></td></tr></table></figure>
+
+<p>随后Cargo将生成名为<code>project_name</code>的文件夹，并包含</p>
+<ul>
+<li>文件<code>Cargo.toml</code></li>
+<li>文件夹<code>src</code><ul>
+<li>包含源文件<code>main.rs</code></li>
+<li>所有的源文件都应当放在<code>src</code>下</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="Cargo-toml"><a href="#Cargo-toml" class="headerlink" title="Cargo.toml"></a><strong>Cargo.toml</strong></h3><ul>
+<li><code>toml</code>是“Tom’s Obvious, Minimal Language”的简称，是Cargo的配置格式</li>
+</ul>
+<figure class="highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[package]</span></span><br><span class="line"><span class="attr">name</span> = <span class="string">&quot;project_name&quot;</span></span><br><span class="line"><span class="attr">version</span> = <span class="string">&quot;0.1.0&quot;</span></span><br><span class="line"><span class="attr">edition</span> = <span class="string">&quot;2021&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="section">[dependencies]</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>区域标题<code>[package]</code>表示下方内容是用来配置package的</li>
+<li><code>[dependencies]</code>列出项目的依赖项</li>
+</ul>
+<p><u>在Rust中，调的库或者包被称作“crate”，中文意为“板条箱”。</u></p>
+<hr>
+<h3 id="Cargo构建项目"><a href="#Cargo构建项目" class="headerlink" title="Cargo构建项目"></a>Cargo构建项目</h3><p>在项目目录下，使用命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cargo build</span><br></pre></td></tr></table></figure>
+
+<p>来构建项目。</p>
+<ul>
+<li>如果是第一次构建，将会生成<code>cargo.lock</code>文件，该文件负责追踪项目版本，不需要手动修改。</li>
+</ul>
+<p>此外，上述命令还会生成二进制文件<code>target/debug/project_name</code>，与<code>rustc</code>命令一致。</p>
+<hr>
+<h3 id="Cargo构建和运行项目"><a href="#Cargo构建和运行项目" class="headerlink" title="Cargo构建和运行项目"></a>Cargo构建和运行项目</h3><p>使用命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cargo run</span><br></pre></td></tr></table></figure>
+
+<p>可以构建并立即运行二进制文件</p>
+<ul>
+<li>如果之前编译成功过且源代码没有改变，将直接运行二进制文件</li>
+</ul>
+<hr>
+<h3 id="Cargo检查代码"><a href="#Cargo检查代码" class="headerlink" title="Cargo检查代码"></a>Cargo检查代码</h3><p>使用命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cargo check</span><br></pre></td></tr></table></figure>
+
+<p>可以检查代码来确保编译，但不会生成可执行文件</p>
+<ul>
+<li>相比<code>cargo build</code>，<code>cargo check</code>的执行速度更快，用于开发过程中来检查代码问题</li>
+<li>只有在需要时或项目开发结束时，才调用<code>cargo build</code>来执行程序</li>
+</ul>
+<hr>
+<h3 id="Cargo构建和发布项目"><a href="#Cargo构建和发布项目" class="headerlink" title="Cargo构建和发布项目"></a>Cargo构建和发布项目</h3><figure class="highlight plaintext"><figcaption><span>build```命令主要用于个人调试使用，如果是为发布而构建，那么一般执行</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```bash</span><br><span class="line">cargo build --release</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>该命令的编译时间更长，同时将优化代码</li>
+<li>可执行文件将生成在<code>target/release</code>而不是<code>target/debug</code></li>
+</ul>
+
+  </div>
+</article>
+
+    </div>
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2024 Yi-Ming
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/notes/">Notes</a></li>
+         
+          <li><a href="/publ/">Publications</a></li>
+         
+          <li><a href="/pics/">Gallery</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/msquare1998">GitHub</a></li>
+         
+          <li><a href="mailto:dingyiming@westlake.edu.cn">Contact</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+
+<!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-37473492-6', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+
+
